@@ -1,0 +1,6 @@
+<?php
+
+class formModel{
+    public $id, $modelo, $cor, $chassi, $kilometragem, $ano, $revisao, $roubo_furto, $aluguel, $venda, $sinistro, $particular, $observacoes, $id_tipo, $id_marca, $id_combustivel, $id_fabricante;
+
+}

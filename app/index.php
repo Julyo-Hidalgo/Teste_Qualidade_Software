@@ -1,3 +1,3 @@
 <?php
 
-include 'view/form.php';
+include 'rotas.php';
