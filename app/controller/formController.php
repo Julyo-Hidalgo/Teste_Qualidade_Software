@@ -12,8 +12,12 @@ class formController{
 
         $model->id_combustivel = $_POST['combustivel'];
         $model->modelo = $_POST['modelo'];
+        $model->cor = $_POST['cor'];
+        $model->observacoes = $_POST['observacoes'];
+        $model->observacoes = $_POST['kilometragem'];
 
-        $dao = new formDAO();
-        $dao->insert($model);
+        $model->save();
+
+        header("Location: /");
     }
 }

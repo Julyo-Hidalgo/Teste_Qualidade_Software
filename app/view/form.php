@@ -52,6 +52,17 @@
                 border: none;
             }
 
+            button{
+                margin: 5% auto;
+                display: block;
+                text-align: center;
+                padding: 1%;
+                font-size: 2vw;
+                color: white;
+                background-color: gray;
+                border-radius: 10px;
+                border: 5px solid black;
+            }
         </style>
 
     </head>
@@ -62,15 +73,14 @@
                 <legend>Cadastro de Veículos</legend>
 
                 <div>
-                    <label for="id" class="noneBorder">Código veículo:</label>
-                    <input id="id" type="number" readonly>
+                    <input id="id" type="hidden" readonly>
 
-                    <label for="marca">Marca:</label>
+                    <label for="marca" class="noneBorder">Marca:</label>
                     <select id="marca" name="marca">
                     </select>
 
                     <label for="modelo">Modelo:</label>
-                    <input id="modelo" name="modelo" type="text">
+                    <input id="modelo" name="modelo" type="text" required>
 
                     <label for="tipo">Tipo:</label>
                     <select id="tipo" name="tipo">
@@ -86,7 +96,8 @@
                     <input id="ano" name="ano" type="text">
 
                     <label for="combustivel">Combustível</label>
-                    <select id="combustivel" name="combustivel">
+                    <select id="combustivel" name="combustivel" required>
+                        <option value="">Selecione</option>
                         <?php   
                             include 'dao/formDAO.php';
                             $dao = new formDAO();
@@ -101,7 +112,7 @@
                     </select>
 
                     <label for="cor">Cor:</label>
-                    <input id="cor" name="cor" type="text">
+                    <input id="cor" name="cor" type="text" required>
 
                     <label for="chassi">Número do chassi:</label>
                     <input id="chassi" name="chassi" type="text">
@@ -109,7 +120,7 @@
 
                 <div>
                     <label for="kilometragem" class="noneBorder">Kilometragem:</label>
-                    <input id="kilometragem" name="kilometragem" type="number" min=0>
+                    <input id="kilometragem" name="kilometragem" type="number" min=0 required>
 
                     <label for="revisao">Revisão:</label>
                     <input type="checkbox" id="revisao" name="revisao">
@@ -132,8 +143,8 @@
                     <label for="observacoes">Observações:</label>
                     <textarea id="observacoes" name="observacoes"></textarea>
                 </div>
+                <button type="submit">Cadastrar</button>
             </fieldset>
-            <button type="submit">Cadastrar</button>
         </form>
     </body>
 </html>
