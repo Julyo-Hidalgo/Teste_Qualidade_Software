@@ -4,8 +4,9 @@ class formDAO{
     private $conexao;
 
     public function __construct(){
-        $dns = "mysql:host=localhost:3307;dbname=mydb";
-        $this->conexao = new PDO($dns, 'root', 'etecjau');
+        $dns = "mysql:host=" . $_ENV['db']['host'] . ";dbname=" . $_ENV['db']['name'];
+    
+        $this->conexao = new PDO($dns, $_ENV['db']['user'], $_ENV['db']['password']);
     }
 
     public function selectCombustivel(){
