@@ -76,32 +76,13 @@
                     <input id="id" type="hidden" readonly>
 
                     <label for="marca" class="noneBorder">Marca:</label>
-                    <select id="marca" name="marca">
-                    </select>
+                    <select id="marca" name="marca" required>
 
-                    <label for="modelo">Modelo:</label>
-                    <input id="modelo" name="modelo" type="text" required>
-
-                    <label for="tipo">Tipo:</label>
-                    <select id="tipo" name="tipo">
-
-                    </select>
-
-                    <label for="fabricante">Fabricante:</label>
-                    <select id="fabricante" name="fabricante">
-
-                    </select>
-
-                    <label for="ano">Ano:</label>
-                    <input id="ano" name="ano" type="text">
-
-                    <label for="combustivel">Combustível</label>
-                    <select id="combustivel" name="combustivel" required>
-                        <option value="">Selecione</option>
+                        <option value="">Selecione uma marca:</option>
                         <?php   
-                            include 'dao/formDAO.php';
-                            $dao = new formDAO();
-                            $var = $dao->selectCombustivel();
+                            include 'dao/marcaDAO.php';
+                            $dao = new marcaDAO();
+                            $var = $dao->selectMarca();
 
                             foreach ($var as $option){
                         ?>
@@ -111,11 +92,67 @@
                         <?php } ?>
                     </select>
 
+                    <label for="modelo">Modelo:</label>
+                    <input id="modelo" name="modelo" type="text" required>
+
+                    <label for="tipo">Tipo:</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Selecione um tipo:</option>
+                        <?php   
+                            include 'dao/tipoDAO.php';
+                            $dao = new tipoDAO();
+                            $var = $dao->selecTipo();
+
+                            foreach ($var as $option){
+                        ?>
+                            <option value="<?php echo($option['id']);?>">
+                                <?php echo($option['nome']); ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+
+                    <label for="fabricante">Fabricante:</label>
+                    <select id="fabricante" name="fabricante" required>
+                        <option value="">Selecione um fabricante:</option>
+                        <?php   
+                            include 'dao/fabricanteDAO.php';
+                            $dao = new fabricanteDAO();
+                            $var = $dao->selectFabricante();
+
+                            foreach ($var as $option){
+                        ?>
+                            <option value="<?php echo($option['id']);?>">
+                                <?php echo($option['nome']); ?>
+                            </option>
+                        <?php } ?>
+                        
+                    </select>
+
+                    <label for="ano">Ano:</label>
+                    <input id="ano" name="ano" type="number" min=0 max=2018 required>
+
+                    <label for="combustivel">Combustível</label>
+                    <select id="combustivel" name="combustivel" required>
+                        <option value="">Selecione um combustível:</option>
+                        <?php   
+                            include 'dao/combustivelDAO.php';
+                            $dao = new combustivelDAO();
+                            $var = $dao->selectCombustivel();
+
+                            foreach ($var as $option){
+                        ?>
+                            <option value="<?php echo($option['id']);?>">
+                                <?php echo($option['nome']); ?>
+                            </option>
+                        <?php } ?>
+
+                    </select>
+
                     <label for="cor">Cor:</label>
                     <input id="cor" name="cor" type="text" required>
 
                     <label for="chassi">Número do chassi:</label>
-                    <input id="chassi" name="chassi" type="text">
+                    <input id="chassi" name="chassi" type="text" required>
                 </div>
 
                 <div>

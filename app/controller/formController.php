@@ -14,7 +14,11 @@ class formController{
         $model->modelo = $_POST['modelo'];
         $model->cor = $_POST['cor'];
         $model->observacoes = $_POST['observacoes'];
-        $model->observacoes = $_POST['kilometragem'];
+        $model->kilometragem= $_POST['kilometragem'];
+        $model->id_marca = $_POST['marca'];
+        $model->id_tipo = $_POST['tipo'];
+        $model->id_fabricante = $_POST['fabricante'];
+        $model->ano = $_POST['ano'];
 
         $model->save();
 

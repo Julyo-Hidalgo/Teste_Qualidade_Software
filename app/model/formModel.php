@@ -5,8 +5,8 @@ class formModel{
 
 
     public function save(){
-        include 'dao/formDAO.php';
-        $dao = new formDAO();
+        include 'dao/veiculoDAO.php';
+        $dao = new veiculoDAO();
         $dao->insert($this);
     }
 }
