@@ -129,7 +129,7 @@
                     </select>
 
                     <label for="ano">Ano:</label>
-                    <input id="ano" name="ano" type="number" min=0 max=2018 required>
+                    <input id="ano" name="ano" type="number" min=2000 max=2023 required>
 
                     <label for="combustivel">Combustível</label>
                     <select id="combustivel" name="combustivel" required>
@@ -152,7 +152,7 @@
                     <input id="cor" name="cor" type="text" required>
 
                     <label for="chassi">Número do chassi:</label>
-                    <input id="chassi" name="chassi" type="text" required>
+                    <input id="chassi" name="chassi" type="text" required minlength="17" maxlength="17" type="17" autocomplete="off">
                 </div>
 
                 <div>

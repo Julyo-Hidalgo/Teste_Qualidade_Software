@@ -19,9 +19,21 @@ class formController{
         $model->id_tipo = $_POST['tipo'];
         $model->id_fabricante = $_POST['fabricante'];
         $model->ano = $_POST['ano'];
+        $model->chassi = $_POST['chassi'];
+        $model->revisao = $model->getCheckbox($_POST['revisao']);
+        $model->sinistro = $model->getCheckbox($_POST['sinistro']);
+        $model->roubo_furto = $model->getCheckbox($_POST['roubo_furto']);
+        $model->aluguel = $model->getCheckbox($_POST['aluguel']);
+        $model->venda = $model->getCheckbox($_POST['venda']);
+        $model->particular = $model->getCheckbox($_POST['particular']);
 
-        $model->save();
+        /*$model->save();
 
-        header("Location: /");
+        header("Location: /sucesso");*/
+        echo (var_dump($model));
+    }
+
+    public static function sucesso(){
+        include 'view/cadastrado.php';
     }
 }

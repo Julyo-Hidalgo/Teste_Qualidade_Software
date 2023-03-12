@@ -9,4 +9,13 @@ class formModel{
         $dao = new veiculoDAO();
         $dao->insert($this);
     }
+
+    public static function getCheckbox($value){
+        if ($value <> null){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
 }

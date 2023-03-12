@@ -15,6 +15,10 @@ switch ($uri){
         formController::save();
     break;
 
+    case '/sucesso':
+        formController::sucesso();
+    break;
+
     default:
         echo 'erro 404';
     break;
